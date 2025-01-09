@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import authRoutes from './routes/authRoute.js'
 import userRoutes from './controllers/userController.js'
+import chatRoute from './controllers/chatController.js'
 
 
 const app = express()
@@ -18,9 +19,9 @@ app.get('/',(req,res)=>{
 })
 
 
-app.use('/auth',authRoutes)
-app.use('/auth/user',userRoutes)
-
+app.use('/api/auth',authRoutes)
+app.use('/api/user',userRoutes)
+app.use('/api/chat',chatRoute)
 
 
 
